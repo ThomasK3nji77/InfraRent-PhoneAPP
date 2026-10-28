@@ -277,6 +277,107 @@ select{-webkit-appearance:none;appearance:none;padding-right:32px;background-ima
 /* onglets et titres */
 .tabs a.on{border-bottom-width:3px}
 .ph h1 small{font-weight:600;white-space:nowrap}
+/* ===== v22 : version téléphone ===== */
+.more{display:none!important}
+@media screen and (max-width:820px){
+html{-webkit-text-size-adjust:100%}
+body{display:block;height:auto;min-height:100vh;min-height:100dvh;overflow:visible}
+#sb{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;height:auto;flex-direction:row;overflow:visible;padding:0 0 env(safe-area-inset-bottom,0px);background:#101b30;border-top:1px solid rgba(255,255,255,.1);z-index:30;-webkit-transform:translateZ(0);transform:translateZ(0)}
+#sb .lg,#sb .ft{display:none}
+#sb a{flex:1 1 0;min-width:0;flex-direction:column;align-items:center;justify-content:center;gap:2px;margin:0;padding:8px 2px 7px;font-size:10.5px;line-height:1.15;text-align:center;border:0;border-top:3px solid transparent;border-radius:0;box-shadow:none;color:#aebbd0;white-space:nowrap}
+#sb a>span:last-child{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+#sb a.on{background:rgba(255,255,255,.07);color:#fff;border-top-color:#f58220}
+#sb a .ni{display:inline-flex}#sb a.on .ni{color:#f58220}
+#sb a:nth-of-type(n+5):not(.more){display:none}
+#sb a.more{display:flex!important}
+#mn{padding:14px 12px calc(92px + env(safe-area-inset-bottom,0px))}
+/* en-têtes */
+.ph{gap:8px;margin-bottom:12px}.ph h1{font-size:21px;flex:1 1 100%;line-height:1.2}
+.ph>.btn,.ph>select{flex:0 0 auto}
+.btn{font-size:14px;padding:8px 12px}.btn.s{padding:6px 10px;font-size:13px}
+.row{gap:8px}
+.tabs{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tabs a{white-space:nowrap;padding:10px 14px}
+.card{padding:14px;border-radius:14px}
+.kp{grid-template-columns:1fr 1fr}.kp .card b{font-size:21px}.hero .big{font-size:26px}
+.todo{max-width:100%}
+.hero .card small:not(:first-child),.kp .card small:not(:first-child){margin-right:8px}
+/* fenêtres : feuille depuis le bas */
+.mb{align-items:flex-end}
+.md{width:100%;max-width:100%;max-height:92vh;max-height:92dvh;border-radius:18px 18px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+#toast{bottom:calc(84px + env(safe-area-inset-bottom,0px));max-width:92vw}
+/* menu « Plus » */
+.mm .mg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mm .mg a{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px;border:1px solid var(--b);border-radius:12px;background:var(--h);font-size:12.5px;font-weight:600;text-align:center;cursor:pointer;color:var(--t)}
+.mm .mg a.on{border-color:var(--a);background:var(--sel);color:var(--a)}
+/* planificateur */
+.pf{height:auto;min-height:0}
+.pf .pl{display:flex;flex-direction:column;gap:10px}
+.pf .pb{height:auto;max-height:none;padding:10px 12px;overflow:visible}
+.pf .pb p{display:none}
+.pf .pb select{width:calc(50% - 4px)!important;display:inline-block;margin-bottom:8px!important;font-size:14px;padding:7px 28px 7px 10px}
+.pf .pb .pbl{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.pf .pb .pi{flex:0 0 auto;min-width:130px;margin:0}
+.cal.full{min-height:0}.cal.full .wk{flex:none}
+.cd{min-height:64px}.cd>b{min-width:20px;height:20px;font-size:11.5px}
+.ch{font-size:10px;padding:2px 4px}
+.rz{width:9px;opacity:.55}
+.sg{margin-top:8px}
+/* lignes de devis : une carte par ligne */
+.dvl .tw,.prp .tw{border:0;box-shadow:none;background:transparent;overflow:visible;border-radius:0}
+.dvl table.fx,.prp table.fx{display:block;min-width:0;background:transparent;border:0;table-layout:auto}
+.dvl table.fx colgroup,.prp table.fx colgroup,.dvl table.fx tr:first-child:has(th),.prp table.fx tr:first-child:has(th){display:none}
+.dvl table.fx tbody,.prp table.fx tbody{display:block}
+.dvl tr,.prp tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px;background:var(--c);border:1px solid var(--b);border-radius:14px;padding:12px;margin:0 0 10px;box-shadow:var(--sh)}
+.dvl td,.prp td{display:block;border:0!important;padding:0!important;min-width:0;background:transparent!important}
+.dvl tr:not(.ac) td::before{display:block;font-size:10px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--m);margin-bottom:2px}
+.dvl tr:not(.ac)>td:nth-child(1){display:none}
+.dvl tr:not(.ac)>td:nth-child(2){grid-column:1/-1;order:1;font-size:15px;font-weight:600}
+.dvl tr:not(.ac)>td:nth-child(4){grid-column:1/-1;order:2}
+.dvl tr:not(.ac)>td:nth-child(3){order:3}.dvl tr:not(.ac)>td:nth-child(3)::before{content:"Quantité"}
+.dvl tr:not(.ac)>td:nth-child(5){order:4}.dvl tr:not(.ac)>td:nth-child(5)::before{content:"Prix / jour"}
+.dvl tr:not(.ac)>td:nth-child(6){order:5}.dvl tr:not(.ac)>td:nth-child(6)::before{content:"Coef."}
+.dvl tr:not(.ac)>td:nth-child(7){order:6}.dvl tr:not(.ac)>td:nth-child(7)::before{content:"Remise %"}
+.dvl tr:not(.ac)>td:nth-child(8){order:7;font-weight:700;font-size:15px;align-self:end}.dvl tr:not(.ac)>td:nth-child(8)::before{content:"Total"}
+.dvl tr:not(.ac)>td:nth-child(9){grid-column:1/-1;order:8;display:flex;gap:8px;justify-content:flex-end;padding-top:4px!important}
+.dvl tr:not(.ac)>td:nth-child(9) .btn{min-width:42px;min-height:36px}
+.dvl td input:not([type=checkbox]),.dvl td select{width:100%;min-height:38px}
+.dvl tr.ac{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:-4px 0 10px 12px;padding:10px 12px;background:var(--h);box-shadow:none;border-radius:12px}
+.dvl tr.ac td:empty{display:none}.dvl tr.ac td[colspan]{flex:1 1 100%}.dvl tr.ac td:nth-child(2){flex:1 1 100%;padding-left:0!important}
+.dvl tr.ac td input:not([type=checkbox]){width:100%;max-width:none}
+/* liste de préparation */
+.prp tr{grid-template-columns:34px minmax(0,1fr) auto;align-items:start}
+.prp tr>td:nth-child(1){grid-column:1}.prp tr>td:nth-child(2){grid-column:2;font-weight:600}.prp tr>td:nth-child(3){grid-column:3;font-weight:700}
+.prp tr>td:nth-child(4){grid-column:2/-1;font-size:13px;color:var(--m)}.prp tr>td:nth-child(5){grid-column:1/-1}
+.prp tr>td:empty{display:none}
+.prp input[type=checkbox]{width:24px;height:24px}
+.prp td input:not([type=checkbox]){width:100%;min-height:38px}
+.prp tr.ac{grid-template-columns:34px minmax(0,1fr) auto;margin-left:12px;background:var(--h);box-shadow:none}
+.cbh{padding:10px 4px}
+/* listes : une carte par ligne (étiquettes ajoutées par le script) */
+.tw table.mc{display:block;min-width:0}
+.tw table.mc tbody{display:block}
+.tw table.mc tr:first-child{display:none}
+.tw table.mc tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;padding:12px 14px;border-top:1px solid var(--b3)}
+.tw table.mc tr:nth-child(2){border-top:0}
+.tw table.mc td{display:block;padding:0!important;border:0!important;font-size:13.5px;min-width:0;background:transparent!important}
+.tw table.mc td:first-child{grid-column:1/-1;font-size:15px;font-weight:600}
+.tw table.mc td[data-l]:not(:first-child)::before{content:attr(data-l);display:block;font-size:10px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--m)}
+.tw table.mc td:empty{display:none}
+.tw table.mc tr.gh{display:block;padding:9px 14px}.tw table.mc tr.gh td{font-size:13px}
+.tw table.mc tr.k:active{background:var(--hv)}
+.tag{white-space:nowrap}
+}
+
+@media screen and (max-width:820px){
+.mb{z-index:60}#toast{z-index:70}
+#sb a>span:last-child{white-space:normal;overflow:visible}
+#sb a{font-size:10px}
+.pf .pb>b{display:block;width:100%;margin-bottom:6px}
+.pf .pb select{width:calc(50% - 4px)!important}
+.rz{opacity:.4}
+.tw table.mc colgroup{display:none}
+.tw table.mc{table-layout:auto}
+}
 </style></head><body>
 <div id="sb"></div><div id="mn"></div><div id="modal"></div><div id="toast"></div><div id="wmfix"></div><input type="file" id="fi" accept=".json" style="display:none">
 <script>
@@ -444,7 +545,7 @@ function tgCat(k){k=decodeURIComponent(k);CATOFF[k]=!CATOFF[k];render()}
 function colAll(v){const d=dv();['',...d.sec.map(s=>s.id)].forEach(sid=>secLines(d,sid).forEach(ln=>{CATOFF[d.id+'|'+sid+'|'+ln.c]=v}));render()}
 function catBlocks(lines,rowFn,heads,w,key,subFn){if(!lines.length)return tbl(heads,'','Section vide : cliquez sur « + Matériel » ou glissez une ligne ici.',w);if(db.set.catHead===false)return tbl(heads,lines.map(rowFn).join(''),'',w);
 const gr=[];lines.forEach(ln=>{const l=gr[gr.length-1];if(l&&l.c===ln.c)l.l.push(ln);else gr.push({c:ln.c,l:[ln]})});let shown=false;
-return gr.map(gp=>{const k=key+'|'+gp.c,off=CATOFF[k],first=!shown&&!off;if(first)shown=true;return`<div class="cbk${first||off?'':' nohd'}"><div class="cbh" onclick="tgCat('${encodeURIComponent(k)}')"><span class="cv">${off?'▸':'▾'}</span>${gp.c?stg(gp.c):'Sans catégorie'}<small class="m">${gp.l.length} ligne${gp.l.length>1?'s':''}</small><span style="flex:1"></span>${subFn?'<b>'+subFn(gp.l)+'</b>':''}</div>${off?'':tbl(heads,gp.l.map(rowFn).join(''),'',w)}</div>`}).join('')}
+return gr.map(gp=>{const k=key+'|'+gp.c,off=CATOFF[k],first=!shown&&!off;if(first)shown=true;return`<div class="cbk${subFn?' dvl':' prp'}${first||off?'':' nohd'}"><div class="cbh" onclick="tgCat('${encodeURIComponent(k)}')"><span class="cv">${off?'▸':'▾'}</span>${gp.c?stg(gp.c):'Sans catégorie'}<small class="m">${gp.l.length} ligne${gp.l.length>1?'s':''}</small><span style="flex:1"></span>${subFn?'<b>'+subFn(gp.l)+'</b>':''}</div>${off?'':tbl(heads,gp.l.map(rowFn).join(''),'',w)}</div>`}).join('')}
 function reloadApp(){if(NAT&&NAT.appReload)NAT.appReload();else location.reload()}
 
 /* menu de gauche et ordre de tri : organisation à la main */
@@ -707,6 +808,11 @@ function list(a){const ea=a==='proj'?'evt':a;return`<div class="ph"><h1>${L[a]}<
 const ymd=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 const pdt=s=>{const a=s.split('-');return new Date(+a[0],+a[1]-1,+a[2])};
 
+/* téléphone : menu « Plus », étiquettes des listes */
+function goP(k){page=k;cur=null;sel=null;q='';cf='';cs='';cty='';pto=false;closeM()}
+function moreMenu(){const L=navList(),s=document.getElementById('sy');document.getElementById('modal').innerHTML=`<div class="mb" onclick="if(event.target===this)closeM()"><div class="md mm"><h3>Menu</h3><div class="mg">${L.map(n=>`<a class="${page===n[0]?'on':''}" onclick="goP('${n[0]}')"><span class="ni">${ICO[n[0]]||''}</span>${n[2]}</a>`).join('')}</div><div class="row" style="margin-top:16px"><button class="btn" onclick="closeM();cycTheme()">Thème clair / sombre</button><button class="btn" onclick="closeM();expo()">Sauvegarder</button><button class="btn" onclick="closeM();document.getElementById('fi').click()">Restaurer</button><button class="btn" onclick="reloadApp()">Recharger</button></div>${s&&s.innerHTML?`<div class="m" style="font-size:12px;margin-top:6px">${s.innerHTML}</div>`:''}<div class="ar"><span style="flex:1"></span><button class="btn" onclick="closeM()">Fermer</button></div></div></div>`}
+function mobLabels(){if(!window.matchMedia||!matchMedia('(max-width:820px)').matches)return;document.querySelectorAll('#mn .tw table').forEach(t=>{if(t.closest('.dvl,.prp'))return;const r0=t.rows[0];if(!r0||!r0.querySelector('th')||r0.cells.length<3)return;const hs=[...r0.cells].map(c=>c.textContent.trim());[...t.rows].slice(1).forEach(r=>{if(r.cells.length===hs.length)[...r.cells].forEach((c,i)=>c.setAttribute('data-l',hs[i]))});t.classList.add('mc')})}
+
 /* jours de voyage / préparation / rangement autour d'un projet */
 const PHT=['Voyage','Préparation','Rangement'],PHI={'Voyage':'🚐','Préparation':'📦','Rangement':'🧰'};
 const phIc=t=>PHI[t]||'🔹';
@@ -769,7 +875,7 @@ return`<div class="ph"><h1>Tableau de bord</h1><button class="btn p" onclick="ed
 <div class="two"><div class="card"><b>Répartition par catégorie</b>${cats.map(([c,v])=>`<div style="margin:6px 0"><div class="row" style="margin:0"><span style="flex:1">${c==='Sans catégorie'?c:stg(c)}</span><b>${eur(v)}</b></div><div style="height:6px;background:var(--b);border-radius:3px"><div style="height:6px;width:${Math.round(v/cmax*100)}%;background:${c==='Sans catégorie'?'var(--m)':col(c)};border-radius:3px"></div></div></div>`).join('')||'<p class="m">Aucune donnée.</p>'}</div><div class="card"><b>Meilleurs clients</b>${S.top.map(([n,v])=>`<div class="row" style="margin:4px 0"><span style="flex:1">${E(n)}</span><b>${eur(v)}</b></div>`).join('')||'<p class="m">Aucune donnée.</p>'}<b style="display:block;margin-top:12px">Matériel le plus loué</b><small class="m">quantité × jours</small>${S.mat.map(([n,v])=>`<div class="row" style="margin:4px 0"><span style="flex:1">${E(n)}</span><b>${v}</b></div>`).join('')||'<p class="m">Aucune donnée.</p>'}</div></div>
 <div class="sh2">Historique par année</div><p class="m" style="margin-top:0">Chaque année repart à zéro ; les chiffres des années passées sont conservés et se mettent à jour si vous ajoutez ou modifiez un devis de cette année-là.</p>${tbl(['Année','Événements','CA HT','Sorties','Marge','Encaissé','Panier moyen','Jours','Évolution CA'],yrs.map(y=>{const s=ys(y),p=ys(y-1);return`<tr><td><b>${y}</b>${y<cy?' <small class="m">enregistrée</small>':''}</td><td>${s.ok} <small class="m">/ ${s.n}</small></td><td>${eur(s.ca)}</td><td>${eur(s.cost)}</td><td><b class="${s.net>=0?'ok':'ko'}">${eur(s.net)}</b></td><td>${eur(s.enc)}</td><td>${eur(s.pm)}</td><td>${s.jours}</td><td>${p.ca?dl(s.ca,p.ca):''}</td></tr>`}).join(''),'',['8%','11%','12%','11%','12%','12%','12%','6%','16%'])}
 <div class="sh2">Projets non finalisés (Option / Confirmé)</div>${tbl(PH,payG(nf,projRow,PH.length,'dash:'),'Tous vos projets sont finalisés.')}`},
-plan:()=>`<div class="pf"><div class="ph"><h1>Planificateur</h1><div class="row chips" style="margin:0"><button class="btn${pmode==='cal'?' on':''}" onclick="pmode='cal';render()">Projets</button><button class="btn${pmode==='staff'?' on':''}" onclick="pmode='staff';render()">Personnel</button></div><button class="btn p" onclick="edit('evt')">+ Nouveau projet</button></div>${pmode==='staff'?`<div style="flex:1;min-height:0;overflow:auto">${staffGrid()}</div>`:`<div class="pl"><div class="card pb"><b>Personnels</b><p class="m" style="margin:4px 0 8px;font-size:12px">Sélectionnez un ou plusieurs membres du personnel, puis glissez-les sur un projet (ou touchez le projet). Ils sont « à confirmer » jusqu’à validation de leur disponibilité.</p><p class="m" style="margin:0 0 8px;font-size:12px">↔ <b>Étirez le bord d’un projet</b> (poignée au survol) pour ajouter des jours de voyage, de préparation ou de rangement.</p><select style="width:100%;margin-bottom:6px" onchange="pcs=this.value;render()"><option value="">Toutes les spécialités</option>${db.spe.map(c=>`<option value="${E(c)}"${pcs===c?' selected':''}>${E(c)}</option>`).join('')}</select><select style="width:100%;margin-bottom:8px" onchange="cty=this.value;render()"><option value="">Tous les statuts</option>${db.pty.map(t=>`<option value="${E(t)}"${cty===t?' selected':''}>${E(t)}</option>`).join('')}</select>${db.per.filter(p=>(!pcs||p.s.includes(pcs))&&(!cty||p.ty===cty)).map(p=>`<div class="pi${psel.includes(p.id)?' sel':''}" draggable="true" ondragstart="dragP(event,'${p.id}')" onclick="selP(event,'${p.id}')"><b>${E(p.p)} ${E(p.n)}</b>${p.ty?`<br><small class="m">${E(p.ty)}</small>`:''}<br>${p.s.map(stg).join('')}</div>`).join('')||'<p class="m">Aucun membre du personnel.</p>'}</div><div style="flex:1;min-width:0">${cal(db.evt.filter(e=>e.s!=='Annulé'),true)}</div></div>`}</div>`,
+plan:()=>`<div class="pf"><div class="ph"><h1>Planificateur</h1><div class="row chips" style="margin:0"><button class="btn${pmode==='cal'?' on':''}" onclick="pmode='cal';render()">Projets</button><button class="btn${pmode==='staff'?' on':''}" onclick="pmode='staff';render()">Personnel</button></div><button class="btn p" onclick="edit('evt')">+ Nouveau projet</button></div>${pmode==='staff'?`<div style="flex:1;min-height:0;overflow:auto">${staffGrid()}</div>`:`<div class="pl"><div class="card pb"><b>Personnels</b><p class="m" style="margin:4px 0 8px;font-size:12px">Sélectionnez un ou plusieurs membres du personnel, puis glissez-les sur un projet (ou touchez le projet). Ils sont « à confirmer » jusqu’à validation de leur disponibilité.</p><p class="m" style="margin:0 0 8px;font-size:12px">↔ <b>Étirez le bord d’un projet</b> (poignée au survol) pour ajouter des jours de voyage, de préparation ou de rangement.</p><select style="width:100%;margin-bottom:6px" onchange="pcs=this.value;render()"><option value="">Toutes les spécialités</option>${db.spe.map(c=>`<option value="${E(c)}"${pcs===c?' selected':''}>${E(c)}</option>`).join('')}</select><select style="width:100%;margin-bottom:8px" onchange="cty=this.value;render()"><option value="">Tous les statuts</option>${db.pty.map(t=>`<option value="${E(t)}"${cty===t?' selected':''}>${E(t)}</option>`).join('')}</select><div class="pbl">${db.per.filter(p=>(!pcs||p.s.includes(pcs))&&(!cty||p.ty===cty)).map(p=>`<div class="pi${psel.includes(p.id)?' sel':''}" draggable="true" ondragstart="dragP(event,'${p.id}')" onclick="selP(event,'${p.id}')"><b>${E(p.p)} ${E(p.n)}</b>${p.ty?`<br><small class="m">${E(p.ty)}</small>`:''}<br>${p.s.map(stg).join('')}</div>`).join('')||'<p class="m">Aucun membre du personnel.</p>'}</div></div><div style="flex:1;min-width:0">${cal(db.evt.filter(e=>e.s!=='Annulé'),true)}</div></div>`}</div>`,
 
 mat:()=>list('mat'),cli:()=>list('cli'),per:()=>list('per'),
 set:()=>`<div class="ph"><h1>Paramètres</h1></div>${shareCard()}${updCard()}
@@ -905,10 +1011,10 @@ return`<div class="scr"><div class="ph"><button class="btn" onclick="cur=null;re
 const IC=p=>`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 const ICO={dash:IC('<rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>'),plan:IC('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'),proj:IC('<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>'),dev:IC('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>'),fac:IC('<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>'),mat:IC('<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>'),kit:IC('<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>'),ext:IC('<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>'),cli:IC('<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>'),per:IC('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'),set:IC('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>')};
 const N=[['dash','📊','Tableau de bord'],['plan','📅','Planificateur'],['proj','📁','Projets'],['dev','📝','Devis'],['fac','🧾','Factures'],['mat','📦','Matériel'],['kit','🧰','Kits'],['ext','🚚','Sous-location'],['cli','🏢','Clients'],['per','👥','Équipe'],['set','⚙️','Paramètres']];
-function render(){snapYears();db.evt.forEach(e=>autoReq(e,getDev(e)));document.getElementById('sb').innerHTML=`<div class="lg">${db.set.logo?`<img src="${db.set.logo}" style="max-width:180px;max-height:48px">`:'INFRA <i>RENT</i>'}</div>${navList().map(n=>`<a draggable="true" ondragstart="nvS(event,'${n[0]}')" ondragover="event.preventDefault()" ondrop="nvD(event,'${n[0]}')" class="${page===n[0]?'on':''}" onclick="page='${n[0]}';cur=null;sel=null;q='';cf='';cs='';cty='';pto=false;render()"><span class="ni">${ICO[n[0]]||n[1]}</span><span>${n[2]}</span></a>`).join('')}<div class="ft"><div id="sy" style="width:100%;font-size:11px"></div><button class="btn" onclick="cycTheme()">Thème clair / sombre</button><button class="btn" onclick="expo()">Sauvegarder</button><button class="btn" onclick="document.getElementById('fi').click()">Restaurer</button><button class="btn" onclick="reloadApp()">Recharger</button></div>`;
+function render(){snapYears();db.evt.forEach(e=>autoReq(e,getDev(e)));document.getElementById('sb').innerHTML=`<div class="lg">${db.set.logo?`<img src="${db.set.logo}" style="max-width:180px;max-height:48px">`:'INFRA <i>RENT</i>'}</div>${navList().map(n=>`<a draggable="true" ondragstart="nvS(event,'${n[0]}')" ondragover="event.preventDefault()" ondrop="nvD(event,'${n[0]}')" class="${page===n[0]?'on':''}" onclick="page='${n[0]}';cur=null;sel=null;q='';cf='';cs='';cty='';pto=false;render()"><span class="ni">${ICO[n[0]]||n[1]}</span><span>${n[2]}</span></a>`).join('')}<a class="more${navList().slice(4).some(n=>n[0]===page)?' on':''}" onclick="moreMenu()"><span class="ni">${IC('<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>')}</span><span>Plus</span></a><div class="ft"><div id="sy" style="width:100%;font-size:11px"></div><button class="btn" onclick="cycTheme()">Thème clair / sombre</button><button class="btn" onclick="expo()">Sauvegarder</button><button class="btn" onclick="document.getElementById('fi').click()">Restaurer</button><button class="btn" onclick="reloadApp()">Recharger</button></div>`;
 const pj=page==='proj'||page==='dev';let h;
 if(pj&&cur&&g('evt',cur))h=detail();else if(page==='mat'&&sel&&g('mat',sel))h=matD();else if(page==='cli'&&sel&&g('cli',sel))h=cliD();else if(page==='kit'&&sel&&g('kit',sel))h=kitD();else if(page==='ext'&&sel&&g('xk',sel))h=xkD();else if(page==='fac'&&sel&&g('fac',sel))h=facD();else if(page==='per'&&sel&&g('per',sel))h=perD();else h=pj?list(page):V[page]();
-document.getElementById('mn').innerHTML=h;applyTheme();if(pj&&cur&&tabP==='eq'&&document.getElementById('tlist'))teamMap();if(document.getElementById('kc'))kitFill();if(document.getElementById('xc'))xkFill();sy()}
+document.getElementById('mn').innerHTML=h;applyTheme();mobLabels();if(pj&&cur&&tabP==='eq'&&document.getElementById('tlist'))teamMap();if(document.getElementById('kc'))kitFill();if(document.getElementById('xc'))xkFill();sy()}
 /* ===== travail à plusieurs : fichier de données partagé (iCloud…) ===== */
 const NAT=window.infraNative||null,FSA=typeof window.showOpenFilePicker==='function',jc=x=>JSON.parse(JSON.stringify(x)),sj=x=>JSON.stringify(x);
 function idb(mode,fn){return new Promise((ok,ko)=>{const r=indexedDB.open('infrarent',1);r.onupgradeneeded=()=>r.result.createObjectStore('k');r.onsuccess=()=>{const t=r.result.transaction('k',mode),q=fn(t.objectStore('k'));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>ko(t.error)};r.onerror=()=>ko(r.error)})}
@@ -945,7 +1051,7 @@ async function syncInit(){try{const g_=ghc();if(g_.t&&g_.o&&g_.r){SY.kind='gh';S
 if(SY.kind&&typeof indexedDB!=='undefined'){const b=await idb('readonly',s=>s.get('b'));SY.base=b?JSON.parse(b):null}}catch(e){}
 if(SY.on){await sync();startPoll()}sy()}
 /* mise à jour du logiciel sans reconstruction */
-const APPV='21';let UPD={file:''};
+const APPV='22';let UPD={file:''};
 const updCard=()=>`<div class="card"><h3 style="margin-top:0">Mise à jour du logiciel</h3><p class="m">Version ${APPV}.</p>${NAT&&NAT.appChoose?`<p class="m">Pour mettre à jour sans rien réinstaller : choisissez le nouveau fichier <b>index.html</b> reçu. Placez-le dans votre dossier partagé (iCloud…) : toute l’équipe utilisera la même version. ${UPD.file?'Fichier utilisé : <b>'+E(UPD.file)+'</b>.':'Actuellement : version intégrée à l’application.'}</p><div class="row"><button class="btn p" onclick="NAT.appChoose()">Choisir le fichier index.html…</button><button class="btn" onclick="NAT.appReload()">Recharger</button>${UPD.file?'<button class="btn d" onclick="NAT.appReset()">Revenir à la version intégrée</button>':''}</div>`:'<p class="m">Cette fonction existe dans l’application installée (Mac / Windows). Avec le lanceur ou la page web, remplacez simplement le fichier par le nouveau.</p>'}</div>`;
 if(NAT&&NAT.appGet)NAT.appGet().then(i=>{UPD=i;if(page==='set')render()}).catch(()=>{});
 /* partage des données par GitHub (ordinateurs et téléphones) */
